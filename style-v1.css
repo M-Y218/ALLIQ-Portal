@@ -812,3 +812,174 @@ body{
     }
 
 }
+
+/* ===== ALLIQ LED BACKGROUND ===== */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0f2b45,#173f67,#0d2741);
+    z-index:-10;
+}
+
+/* 白LED */
+.background::before{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background-image:
+    linear-gradient(rgba(255,255,255,.18) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(255,255,255,.18) 2px,transparent 2px);
+
+    background-size:80px 80px;
+    animation:ledGridMove 35s linear infinite;
+    opacity:.25;
+}
+
+/* 青LED */
+.background::after{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background-image:
+    linear-gradient(rgba(0,170,255,.35) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(0,170,255,.35) 2px,transparent 2px);
+
+    background-size:160px 160px;
+    animation:ledGridMove2 55s linear infinite;
+    opacity:.30;
+    filter:blur(1px);
+}
+
+@keyframes ledGridMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-80px,-80px);
+    }
+
+}
+
+@keyframes ledGridMove2{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(120px,120px);
+    }
+
+}
+
+/* ===== Moving Light ===== */
+
+.background span{
+    position:absolute;
+    display:block;
+    width:240px;
+    height:240px;
+    border-radius:20px;
+    background:rgba(0,180,255,.08);
+    filter:blur(40px);
+    animation:ledFloat 18s ease-in-out infinite;
+}
+
+.background span:nth-child(1){
+    top:10%;
+    left:5%;
+}
+
+.background span:nth-child(2){
+    bottom:10%;
+    right:5%;
+    animation-delay:-9s;
+}
+
+@keyframes ledFloat{
+
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    25%{
+        transform:translate(120px,-40px) scale(1.2);
+    }
+
+    50%{
+        transform:translate(-60px,80px) scale(.9);
+    }
+
+    75%{
+        transform:translate(40px,120px) scale(1.15);
+    }
+
+    100%{
+        transform:translate(0,0) scale(1);
+    }
+
+}
+
+/* ===== LED Shine ===== */
+
+.background::after{
+    animation:
+        ledGridMove2 55s linear infinite,
+        shineMove 10s linear infinite;
+}
+
+@keyframes shineMove{
+
+    0%{
+        filter:blur(2px) brightness(1);
+    }
+
+    50%{
+        filter:blur(2px) brightness(1.8);
+    }
+
+    100%{
+        filter:blur(2px) brightness(1);
+    }
+
+}
+
+/* 光が横切る */
+
+.container::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-50%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,255,255,.18) 50%,
+        transparent 60%
+    );
+
+    animation:glassShine 8s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes glassShine{
+
+    from{
+        transform:translateX(-120%);
+    }
+
+    to{
+        transform:translateX(120%);
+    }
+
+}
