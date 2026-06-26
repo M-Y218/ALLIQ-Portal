@@ -678,3 +678,137 @@ body{
     }
 
 }
+
+/* ==========================
+   ALLIQ LED Background
+========================== */
+
+.led-bg{
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.led-bg::before,
+.led-bg::after{
+    content: "";
+    position: absolute;
+    inset: -20%;
+}
+
+/* 白いLED四角 */
+
+.led-bg::before{
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.95), rgba(255,255,255,.95)),
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)),
+        linear-gradient(rgba(255,255,255,.70), rgba(255,255,255,.70));
+
+    background-size:
+
+        38px 38px,
+        60px 60px,
+        85px 85px;
+
+    background-position:
+
+        5% 15%,
+        78% 35%,
+        40% 78%;
+
+    background-repeat: repeat;
+
+    opacity: .45;
+
+    filter: blur(.3px);
+
+}
+
+/* 青いLED四角 */
+
+.led-bg::after{
+
+    background-image:
+
+        linear-gradient(rgba(33,150,243,.35), rgba(33,150,243,.35)),
+        linear-gradient(rgba(66,165,245,.28), rgba(66,165,245,.28)),
+        linear-gradient(rgba(21,101,192,.22), rgba(21,101,192,.22));
+
+    background-size:
+
+        50px 50px,
+        90px 90px,
+        140px 140px;
+
+    background-position:
+
+        25% 25%,
+        65% 65%,
+        85% 12%;
+
+    background-repeat: repeat;
+
+    opacity: .35;
+
+    filter: blur(1px);
+
+}
+
+/* ==========================
+   LED Animation
+========================== */
+
+.led-bg::before{
+    animation: ledWhiteMove 28s linear infinite;
+}
+
+.led-bg::after{
+    animation: ledBlueMove 38s linear infinite reverse;
+}
+
+@keyframes ledWhiteMove{
+
+    0%{
+        transform: translate(0,0);
+    }
+
+    25%{
+        transform: translate(-30px,20px);
+    }
+
+    50%{
+        transform: translate(-60px,-10px);
+    }
+
+    75%{
+        transform: translate(-20px,-40px);
+    }
+
+    100%{
+        transform: translate(0,0);
+    }
+
+}
+
+@keyframes ledBlueMove{
+
+    0%{
+        transform: translate(0,0) scale(1);
+        opacity:.25;
+    }
+
+    50%{
+        transform: translate(40px,-35px) scale(1.08);
+        opacity:.40;
+    }
+
+    100%{
+        transform: translate(0,0) scale(1);
+        opacity:.25;
+    }
+
+}
