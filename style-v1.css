@@ -33,13 +33,7 @@ body{
 
     align-items:center;
 
-    background:
-    linear-gradient(
-        135deg,
-        #03101f 0%,
-        #093d72 50%,
-        #0a69c8 100%
-    );
+    background: transparent; 
 
 }
 
