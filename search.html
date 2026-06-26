@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>店舗コード検索</title>
+
+<link rel="stylesheet" href="style-v1.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="light"></div>
+
+    <div class="light light2"></div>
+
+</div>
+
+<main class="container">
+
+    <div class="logoArea">
+
+        <h1 class="logo">店舗検索</h1>
+
+        <div class="subtitle">
+
+            Store Search
+
+        </div>
+
+        <div class="logoLine"></div>
+
+    </div>
+
+    <div class="menu">
+
+        <button id="openSearch" class="menuButton">
+
+            <span class="icon">🏪</span>
+
+            <span class="title">店舗コード検索を開く</span>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+        <button id="backHome" class="menuButton">
+
+            <span class="icon">🏠</span>
+
+            <span class="title">ホームへ戻る</span>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+    </div>
+
+</main>
+
+<script>
+
+document.getElementById("openSearch").onclick = () => {
+
+    location.href = "https://script.google.com/macros/s/AKfycbw769I77VkC-pBTQyOmq23Ax4sGCpfeAyBPDXQiDo3QzXr6P7fRkxqIjkz_zffAgjGNgA/exec";
+
+};
+
+document.getElementById("backHome").onclick = () => {
+
+    location.href = "index.html";
+
+};
+
+</script>
+
+</body>
+
+</html>

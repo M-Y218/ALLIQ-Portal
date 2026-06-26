@@ -1,0 +1,385 @@
+/* ===================================
+   ALLIQ Portal v4.0
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    font-family:
+    "Segoe UI",
+    "Yu Gothic UI",
+    sans-serif;
+
+    overflow:hidden;
+
+    color:#fff;
+
+}
+
+body{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #03101f 0%,
+        #093d72 50%,
+        #0a69c8 100%
+    );
+
+}
+
+/* =========================
+   Background
+========================= */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.light{
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(0,170,255,.35),
+        transparent 70%
+    );
+
+    top:-180px;
+
+    left:-180px;
+
+    animation:floatLight 12s ease-in-out infinite;
+
+}
+
+.light2{
+
+    top:auto;
+
+    left:auto;
+
+    right:-180px;
+
+    bottom:-180px;
+
+    animation-delay:6s;
+
+}
+
+@keyframes floatLight{
+
+    0%,100%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(90px,-50px);
+
+    }
+
+}
+
+/* =========================
+   Main
+========================= */
+
+.container{
+
+    width:min(92%,460px);
+
+    padding:38px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* =========================
+   Logo
+========================= */
+
+.logo{
+
+    text-align:center;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    letter-spacing:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #6fd0ff,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-top:8px;
+
+    opacity:.8;
+
+    letter-spacing:2px;
+
+}
+
+.shop{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.logoLine{
+
+    width:80px;
+
+    height:3px;
+
+    margin:22px auto 34px;
+
+    background:#6fd0ff;
+
+    border-radius:999px;
+
+}
+
+/* =========================
+   Menu
+========================= */
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.menuButton{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    overflow:hidden;
+
+}
+
+.menuButton:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35),
+        0 0 18px rgba(70,180,255,.35);
+
+}
+
+.menuButton:active{
+
+    transform:scale(.98);
+
+}
+
+.icon{
+
+    width:42px;
+
+    font-size:24px;
+
+    text-align:center;
+
+}
+
+.title{
+
+    flex:1;
+
+    text-align:left;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.arrow{
+
+    font-size:28px;
+
+    opacity:.45;
+
+    transition:.25s;
+
+}
+
+.menuButton:hover .arrow{
+
+    transform:translateX(6px);
+
+    opacity:1;
+
+}
+
+/* Shine */
+
+.menuButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 4s infinite;
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    40%{
+
+        left:140%;
+
+    }
+
+    100%{
+
+        left:140%;
+
+    }
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:600px){
+
+    .container{
+
+        width:94%;
+
+        padding:28px;
+
+    }
+
+    .logo{
+
+        font-size:42px;
+
+    }
+
+    .title{
+
+        font-size:17px;
+
+    }
+
+}

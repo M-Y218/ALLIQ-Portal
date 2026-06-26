@@ -1,0 +1,1038 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family:"Yu Gothic UI","Meiryo",sans-serif;
+    background:linear-gradient(180deg,#08214b,#0d4ea6,#1f8fff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.background::before{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background-image:
+    linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);
+    background-size:40px 40px;
+    animation:gridMove 12s linear infinite;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.18),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.12),transparent 30%);
+}
+
+@keyframes gridMove{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-40px,40px);
+    }
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+    width:min(90%,420px);
+}
+
+.logo{
+    font-size:64px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:24px;
+    font-weight:300;
+}
+
+.shop{
+    margin-top:8px;
+    font-size:18px;
+    opacity:.9;
+}
+
+#openPortal{
+    margin-top:80px;
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(90deg,#2bb4ff,#0d69e3);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    transition:.2s;
+}
+
+#openPortal:hover{
+    transform:scale(1.03);
+}
+
+#openPortal:active{
+    transform:scale(.97);
+}
+
+.logo{
+    animation:logoFade 1.2s ease;
+    text-shadow:0 0 25px rgba(255,255,255,.25);
+}
+
+@keyframes logoFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+#openPortal{
+
+    animation:buttonUp 1.2s ease;
+
+}
+
+@keyframes buttonUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+#openPortal:hover{
+
+    box-shadow:
+    0 0 20px rgba(80,190,255,.6),
+    0 12px 35px rgba(0,0,0,.35);
+
+}
+
+.background{
+
+    animation:bgMove 18s linear infinite;
+
+}
+
+@keyframes bgMove{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-20px,-15px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+} 
+
+/* ===== ALLIQ Background Effect ===== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+}
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220%;
+
+    height:220%;
+
+    top:-60%;
+
+    left:-60%;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    animation:matrixMove 18s linear infinite;
+
+}
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 30%),
+
+    radial-gradient(circle at 80% 60%,rgba(255,255,255,.15),transparent 25%),
+
+    radial-gradient(circle at 50% 90%,rgba(255,255,255,.10),transparent 35%);
+
+}
+
+/* ===== Button Glow ===== */
+
+#openPortal{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+#openPortal::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 3.5s infinite;
+
+}
+
+@keyframes buttonShine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    100%{
+
+        left:160%;
+
+    }
+
+}
+
+/* ===== Moving Blue Glow ===== */
+
+.background .light{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(70,170,255,.30),
+    transparent 70%);
+
+    filter:blur(35px);
+
+    animation:lightMove 18s ease-in-out infinite;
+
+}
+
+.background .light2{
+
+    animation-delay:-9s;
+
+}
+
+@keyframes lightMove{
+
+    0%{
+
+        transform:translate(-180px,-120px);
+
+    }
+
+    25%{
+
+        transform:translate(250px,-40px);
+
+    }
+
+    50%{
+
+        transform:translate(180px,220px);
+
+    }
+
+    75%{
+
+        transform:translate(-120px,180px);
+
+    }
+
+    100%{
+
+        transform:translate(-180px,-120px);
+
+    }
+
+}
+
+/* ===== Glass Button ===== */
+
+#openPortal{
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.22),
+        rgba(18,120,255,.82)
+    );
+
+}
+
+#openPortal::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:18px;
+
+    pointer-events:none;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.45),
+    inset 0 -8px 20px rgba(0,0,0,.18);
+
+}
+
+/* ===== Animated Grid Glow ===== */
+
+.background::before{
+
+    animation:
+        matrixMove 18s linear infinite,
+        gridPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes gridPulse{
+
+    0%{
+
+        opacity:.18;
+
+    }
+
+    50%{
+
+        opacity:.45;
+
+    }
+
+    100%{
+
+        opacity:.18;
+
+    }
+
+}
+
+.background{
+
+    background:
+    radial-gradient(circle at top,#1b65d8 0%,#0b3d8c 40%,#07162f 100%);
+}
+
+/* ===== Pixel Effect ===== */
+
+.pixel{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    background:#4bb7ff;
+
+    opacity:.08;
+
+    border-radius:3px;
+
+    animation:pixelBlink 4s infinite ease-in-out;
+
+}
+
+@keyframes pixelBlink{
+
+    0%{
+
+        opacity:.05;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:.45;
+        transform:scale(1.15);
+
+        box-shadow:
+        0 0 12px #61c3ff;
+
+    }
+
+    100%{
+
+        opacity:.05;
+        transform:scale(.8);
+
+    }
+
+}
+
+/* ===== Floating Pixels ===== */
+
+.pixel{
+
+    transition:0.8s;
+
+}
+
+.pixel:nth-child(odd){
+
+    animation-duration:5s;
+
+}
+
+.pixel:nth-child(even){
+
+    animation-duration:7s;
+
+}
+
+.pixel::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:3px;
+
+    background:rgba(255,255,255,.25);
+
+    animation:pixelFlash 3s infinite;
+
+}
+
+@keyframes pixelFlash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+.background{
+
+    perspective:800px;
+
+}
+
+.container{
+
+    animation:floatUp 5s ease-in-out infinite;
+
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===== Logo Area ===== */
+
+.logoArea{
+
+    margin-bottom:60px;
+
+}
+
+.logo{
+
+    font-size:72px;
+
+    font-weight:900;
+
+    letter-spacing:8px;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.15),
+    0 0 40px rgba(0,140,255,.35);
+
+}
+
+.subtitle{
+
+    margin-top:8px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    opacity:.9;
+
+}
+
+.shop{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    opacity:.85;
+
+}
+
+.logoLine{
+
+    width:120px;
+
+    height:3px;
+
+    margin:22px auto 0;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    box-shadow:
+    0 0 15px rgba(90,190,255,.5);
+
+}
+
+/* ===== Sweep Light ===== */
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30%;
+
+    background:linear-gradient(
+        135deg,
+        transparent 35%,
+        rgba(255,255,255,.08) 50%,
+        transparent 65%
+    );
+
+    animation:sweepLight 10s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes sweepLight{
+
+    from{
+
+        transform:translateX(-35%) translateY(-35%);
+
+    }
+
+    to{
+
+        transform:translateX(35%) translateY(35%);
+
+    }
+
+}
+
+/* ===== ALLIQ Glow ===== */
+
+.logo{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #bfe4ff 45%,
+        #63b6ff 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    filter:drop-shadow(0 0 12px rgba(90,190,255,.35));
+
+}
+
+.logoLine{
+
+    animation:lineGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes lineGlow{
+
+    0%,100%{
+
+        opacity:.45;
+
+        transform:scaleX(.85);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scaleX(1.15);
+
+        box-shadow:0 0 20px rgba(90,190,255,.7);
+
+    }
+
+}
+
+/* ===== Ripple ===== */
+
+#openPortal{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.55);
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s ease-out;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(16);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===== Glass Panel ===== */
+
+.container{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    padding:55px 40px;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.20);
+
+}
+
+/* ===== Layout Upgrade ===== */
+
+.container{
+
+    max-width:460px;
+
+    padding:60px 42px;
+
+}
+
+.logo{
+
+    font-size:84px;
+
+    letter-spacing:10px;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    font-size:26px;
+
+    letter-spacing:6px;
+
+    margin-bottom:14px;
+
+}
+
+.shop{
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+    opacity:.9;
+
+}
+
+.logoLine{
+
+    width:180px;
+
+    height:4px;
+
+    margin:28px auto 0;
+
+}
+
+#openPortal{
+
+    margin-top:60px;
+
+    min-height:72px;
+
+    font-size:24px;
+
+    border-radius:24px;
+
+}
+
+/* ===== Button Layout ===== */
+
+#openPortal{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.buttonIcon{
+
+    font-size:34px;
+
+    transition:transform .3s;
+
+}
+
+.buttonText{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+#openPortal:hover .buttonIcon{
+
+    transform:translateY(-4px) scale(1.08);
+
+}
+
+/* ===== Screen Depth ===== */
+
+body{
+
+    background:
+        radial-gradient(circle at top,#2f7df2 0%,#0d4ea6 35%,#07162f 100%);
+
+}
+
+.container{
+
+    transform:translateY(-20px);
+
+}
+
+.background{
+
+    filter:saturate(120%) brightness(105%);
+
+}
+
+.logo{
+
+    animation:logoGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        filter:drop-shadow(0 0 12px rgba(90,190,255,.25));
+
+    }
+
+    50%{
+
+        filter:drop-shadow(0 0 28px rgba(90,190,255,.65));
+
+    }
+
+}
+
+/* ===== Breathing Button ===== */
+
+#openPortal{
+
+    animation:buttonBreath 3s ease-in-out infinite;
+
+}
+
+@keyframes buttonBreath{
+
+    0%,100%{
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.35),
+            0 0 12px rgba(70,170,255,.25);
+
+    }
+
+    50%{
+
+        box-shadow:
+            0 20px 45px rgba(0,0,0,.45),
+            0 0 28px rgba(70,170,255,.65);
+
+    }
+
+}
+
+/* ===== Premium Screen ===== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(80,180,255,.18), transparent 25%),
+        radial-gradient(circle at 85% 75%, rgba(80,180,255,.15), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(255,255,255,.08), transparent 40%);
+
+    animation:ambientMove 16s ease-in-out infinite;
+
+}
+
+@keyframes ambientMove{
+
+    0%,100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(20px,-15px) scale(1.08);
+
+    }
+
+}
+
+/* ===== LED Background ===== */
+
+.led{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:2px;
+
+    background:#5bc6ff;
+
+    opacity:.08;
+
+    animation:ledBlink 6s ease-in-out infinite;
+
+    box-shadow:
+        0 0 10px rgba(91,198,255,.35);
+
+}
+
+@keyframes ledBlink{
+
+    0%,100%{
+
+        opacity:.05;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:.9;
+
+        transform:scale(1.6);
+
+        box-shadow:
+            0 0 18px rgba(91,198,255,.9);
+
+    }
+
+}
